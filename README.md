@@ -1,7 +1,5 @@
 # TIL
 
-<hr/>
-
 - Language
 - DataBase
 - ML
