@@ -8,8 +8,6 @@ Hadoop Ecosystem을 정리한 이미지이다.
 
 ## Core Hadoop Ecosystem
 
-<hr/>
-
 ![Core Hadoop ecosystem](/Cluster%20Computing%20Fundamentals/Hadoop/asset/core-hadoop-system.png)
 Core Hadop Ecosystem에서 소개되는 기술 스택들은 Hadoop 플랫폼에 직접 개발되었다.분행색은 Hadoop 자체의 부분이다. 나머지는 시간이 지나 덧붙여진 add-on Project이다
 
@@ -94,8 +92,6 @@ Core Hadop Ecosystem에서 소개되는 기술 스택들은 Hadoop 플랫폼에 
 
 ## External Data Storage
 
-<hr/>
-
 - **MySQL**
   Sqoop을 통해 Hadoop 클러스터로 데이터를 가져올 뿐 아니라 MySQL로 내보낼 수도 있다. Spark와 같은 기술은 JDBC나 ODBC 데이터베이스에 기록할 수 있고 중앙 데이터베이스에 직접 저장하거나 필요하다면 결과를 검색할 수도 있다.
 
@@ -105,8 +101,6 @@ Core Hadop Ecosystem에서 소개되는 기술 스택들은 Hadoop 플랫폼에 
   HBase처럼 Columnar Data Store이고 웹 애플리케이션 등에 데이털르 실시간으로 노출하는데 사용될 수 있다. 따라서 실시간 애플리케이션과 클러스터 사이에 Cassandra나 MongoDB 같은 Layer을 만드는 것을 추천한다.
 
 ## Query Engines
-
-<hr/>
 
 아래와 같은 기술을 사용해서 대화형으로 SQL 쿼리를 입력할 수 있다
 
@@ -133,4 +127,4 @@ Core Hadop Ecosystem에서 소개되는 기술 스택들은 Hadoop 플랫폼에 
 <br>
 
 - **Apache Zeppelin**
-  클러스터와읭 상호작용과 사용자 인터페이스를 노트북 유형으로 접근했다.
+  클러스터와의 상호작용과 사용자 인터페이스를 노트북 유형으로 접근했다.
