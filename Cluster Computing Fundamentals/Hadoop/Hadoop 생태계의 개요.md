@@ -12,27 +12,31 @@ Hadoop Ecosystem을 정리한 이미지이다.
 Core Hadop Ecosystem에서 소개되는 기술 스택들은 Hadoop 플랫폼에 직접 개발되었다.분행색은 Hadoop 자체의 부분이다. 나머지는 시간이 지나 덧붙여진 add-on Project이다
 
 - **HDFS**
+  <br>
   Hadoop Distributed File System (하둡 분산 파일 시스템) 의 약어이다. 데이터를 클러스터의 컴퓨터들에 분산 저장하는 시스템이다. HDFS는 클러스터의 드라이브들을 하나의 거대한 파일 시스템으로 사용한다. 단순 저장뿐만 아니라 복사본을 만들어 데이터가 손실되었을 때, 자동으로 복구한다. Hadoop의 "분산 데이터 저장소" 역할을 담당한다.
 
 <br>
 
 - **YARN**
+  <br>
   Yet Antoher Resource Negotiator의 약어로, "또 다른 리소스 교섭자"라는 뜻이다. YARN은 데이터 처리 부분을 담당한다. YARN은 컴퓨터 클러스터의 리소스를 관리하는 시스템이다. 누가 작업을 언제 실행하고 어떤 노드가 추가 작업을 할 수 있고 없고 등을 결정한다.
 
 <br>
 
 - **MapReduce**
+  <br>
   데이터를 클러스터 전체에 걸쳐 처리하도록 하는 프로그래밍 메타포 혹은 프로그래밍 모델이다. MapReduce는 Mapper와 Reducer로 구성되어 있다. Mapper는 클러스테 분산 돼 있는 데이터를 효율적으로 동시에 변형시킬 수 있다. Reducer는 그 데이터를 집계한다.
   원래는 YARN과 MapReduce가 거의 같은 역할을 했는데 최근에는 분리되었다.
 
 <br>
 
 - **Pig**
+  <br>
   Java나 Python으로 MapReduce를 코딩하기보다 SQL 스타일 구문을 사용하는 스크립트 언어에 익숙하다면 Pig가 적격이다. 고수준의 API로써, SQL과 비슷한 간단한 스크립트를 작성해 쿼리를 연결하고 복잡한 답을 구할 수 있다. 정리하자면, Pig는 작성된 스크립트를 MapReduce가 읽을 수 있도록 번역하고 MapReduce는 다시 YARN과 HDFS에게 데이터를 처리하고 원하는 답을 가져오게 한다.
 
 <br>
 
-- **HIVE**
+- **HIVE**  
   HIVE는 실제 SQL 쿼리를 받고 파일 시스템에 분산된 데이터를 SQL 데이터베이스처럼 취급한다. 셸 클라이언트나 ODBC(Open Database Connectivity) 등을 통해 데이터베이스에 접속할 수 있으며, Hadoop 클러스터에 저장 돼 있는 데이터가 내부적으로는 관계형 데이터베이스가 아님에도 불구하고 SQL로 쿼리한다. SQL에 익숙하다면 Hive API를 유용하게 사용할 수 있다.
 
   <br>
