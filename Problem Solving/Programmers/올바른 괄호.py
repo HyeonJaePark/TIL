@@ -7,7 +7,7 @@ def solution(s):
             if tmp <= 0:
                 return False
             else:
-                tmp -=1
+                tmp -= 1
         
     return True if tmp == 0 else False
 
