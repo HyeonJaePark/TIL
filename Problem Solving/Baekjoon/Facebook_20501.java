@@ -1,7 +1,7 @@
 import java.io.*;
 import java.math.BigInteger;
 
-class Main{
+public class Facebook_20501{
     static int Int(String s) {
         return Integer.parseInt(s);
     }
