@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 가장긴바이토닉부분수열_11054 {
+public class 가장_긴_바이토닉_부분수열_11054 {
     static int n;
     static int[] arr;
     static int[]increase;
