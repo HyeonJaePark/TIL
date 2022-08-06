@@ -1,7 +1,7 @@
 from itertools import combinations
 e = input()
 
-answer = []
+answer = set()
 stack = []
 brakect = []
 
@@ -15,7 +15,7 @@ for i in range(1, len(brakect) + 1):
     for c in combinations(brakect, i):
         tmp = [x for s in c for x in s]
         ne = [x for _, x in enumerate(e) if _ not in tmp]
-        answer.append(''.join(ne))
+        answer.add(''.join(ne))
 
-for i in sorted(set(answer)):
+for i in sorted(answer):
     print(i)
