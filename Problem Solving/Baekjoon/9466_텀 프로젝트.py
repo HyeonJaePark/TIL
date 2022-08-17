@@ -5,21 +5,22 @@ input = sys.stdin.readline
 
 def dfs(student):
     team = [student]
+    candidate = set()
+    candidate.add(student)
     stack = [student]
     visited[student] = True
 
     while stack:
-        cstudent = stack.pop()
-        nstudent = preferences[cstudent]
+        nstudent = preferences[stack.pop()]
 
-        if nstudent in team:
+        if nstudent in candidate:
             tmp = list(dict.fromkeys(team))
-            tmp = tmp[tmp.index(nstudent):]
-            return tmp
+            return tmp[tmp.index(nstudent):]
         elif not visited[nstudent]:
             team.append(nstudent)
-            visited[nstudent] = True
             stack.append(nstudent)
+            candidate.add(nstudent)
+            visited[nstudent] = True
 
     return []
 
