@@ -6,34 +6,39 @@ def binarysearch(left, right, target):
     while left < right:
         mid = (left + right) // 2
 
-        if answer[mid] < target:
+        if track[mid] < target:
             left = mid + 1
-        elif answer[mid] > target:
-            right = mid
         else:
             right = mid
-            return (right, True)
 
-    return (right, False)
+    return right
 
 
 n = int(input())
 a = list(map(int, input().split()))
-answer = [0 for _ in range(n)]
-answer[0] = a[0]
+track = [a[0]]
+dp = [(a[0], 1)]
 
-j = 0
 for i in range(1, n):
-    print(j, i)
-    if answer[j] < a[i]:
-        answer[j + 1] = a[i]
-        j += 1
-    elif answer[j] > a[i]:
-        idx, tf = binarysearch(0, j, a[i])
-        if not tf:
-            answer = answer[:idx] + [a[i]] + answer[idx:]
-            j += 1
+    if track[-1] < a[i]:
+        dp.append((a[i], len(track) + 1))
+        track.append(a[i])
+    else:
+        idx = binarysearch(0, len(track), a[i])
+        track[idx] = a[i]
+        dp.append((a[i], idx + 1))
 
+max_length = len(track)
+answer = []
 
-print(j + 1)
-print(str(answer[:j+1])[1:-1].replace(',', ''))
+print(dp)
+print(track)
+
+while max_length and dp:
+    num, idx = dp.pop()
+    if idx == max_length:
+        answer.append(num)
+        max_length -= 1
+
+print(len(answer))
+print(*answer[::-1])
