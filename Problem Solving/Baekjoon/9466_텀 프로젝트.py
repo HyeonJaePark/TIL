@@ -1,6 +1,7 @@
 import sys
 input = sys.stdin.readline
 
+
 t = int(input())
 
 for _ in range(t):
@@ -8,19 +9,19 @@ for _ in range(t):
     preferences = [0] + list(map(int, input().split()))
     visited = [0 for _ in range(n + 1)]
     s, answer = [], 0
-
+    
     for preference in preferences:
         visited[preference] += 1
-
+    
     for i in range(1, n + 1):
         if not visited[i]:
             s.append(i)
             visited[i] -= 1
-
+    
     while s:
         c = s.pop()
         answer += 1
-
+        
         visited[preferences[c]] -= 1
         if not visited[preferences[c]]:
             s.append(preferences[c])
