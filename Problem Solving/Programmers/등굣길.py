@@ -19,6 +19,7 @@ def solution(m, n, puddles):
         for j in range(m + 1):
             print(board[i][j], end=' ')
         print()
+
     return board[n][m] % 1000000007
 
 
