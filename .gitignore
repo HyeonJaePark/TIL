@@ -1,3 +1,6 @@
 .idea
 out
 TIL.iml
+.vscode
+Problem Solving/Baekjoon/*.exe
+Problem Solving/Programmers/*.exe
