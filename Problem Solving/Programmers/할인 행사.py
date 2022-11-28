@@ -52,8 +52,7 @@ def solution(want, number, discount):
         want_dict = include_newest_product(new, discount, want_set, want_dict)
 
         answer += get_all_wants(want_dict)
-        print(want_dict)
-        print(answer)
+
         new += 1
         far += 1
 
@@ -65,3 +64,44 @@ number = [3, 2, 2, 2, 1]
 discount = ["chicken", "apple", "apple", "banana", "rice", "apple",
             "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"]
 print(solution(want, number, discount))
+
+
+# def solution(want, number, discount):
+#     answer = 0
+#     window_size = 10
+#     want_dict = {}
+
+#     for i, product in enumerate(want):
+#         want_dict[product] = number[i]
+
+#     want_set = set(want_dict.keys())
+
+#     for i in range(window_size):
+#         if discount[i] in want_set:
+#             want_dict[discount[i]] -= 1
+
+#     for i in list(want_dict.values()):
+#         if int(i) > 0:
+#             break
+#     else:
+#         answer += 1
+
+
+#     i = 10
+#     j = 0
+#     while i < len(discount):
+#         if discount[j] in want_set:
+#             want_dict[discount[j]] += 1
+#         if discount[i] in want_set:
+#             want_dict[discount[i]] -= 1
+
+#         for x in list(want_dict.values()):
+#             if int(x) > 0:
+#                 break
+#         else:
+#             answer += 1
+
+#         i += 1
+#         j += 1
+
+#     return answer
