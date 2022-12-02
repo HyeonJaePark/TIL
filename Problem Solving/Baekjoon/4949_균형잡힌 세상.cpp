@@ -31,7 +31,7 @@ int main() {
             }
         }
 
-        if (!tf) cout << "no\n";
+        if (!tf || !s.empty()) cout << "no\n";
         else cout << "yes\n";
     }
 
