@@ -7,20 +7,24 @@ int main(void) {
 
   int n, s;
   int arr[21];
-  int com[21] = {
-      0,
-  };
+  int answer = 0;
 
   cin >> n >> s;
   for (int i = 0; i < n; i++) cin >> arr[i];
 
-  do {
-    for (int j = 0; j < n; j++) {
-      if (com[j] == 0) {
-        cout << j + 1 << ' ';
+  for (int i = 0; i < n; i++) {
+    vector<int> v;
+    for (int j = 0; j < i; j++) v.push_back(0);
+    for (int j = i; j < n; j++) v.push_back(1);
+    do {
+      int tot = 0;
+      for (int j = 0; j < v.size(); j++) {
+        if (v.at(j) == 1) tot += arr[j];
       }
-    }
-    cout << '\n';
-  } while (next_permutation(com, com + n));
+      if (tot == s) answer++;
+    } while (next_permutation(v.begin(), v.end()));
+  }
+
+  cout << answer;
   return 0;
 }
